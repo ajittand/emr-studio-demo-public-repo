@@ -1,0 +1,6 @@
+# Presto distributed query engine for Big Data
+from pyhive import presto
+cursor = presto.connect(host = "localhost",port = 8889,catalog="hive", schema = "default").cursor()
+cursor.execute('SELECT * FROM default.movie_reviews limit 2')
+results = cursor.fetchall()
+print(results)
